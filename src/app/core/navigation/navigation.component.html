@@ -1,5 +1,5 @@
 <ul>
-    <li [routerLink]="['/news']"><a>Top</a></li>
-    <li [routerLink]="['/newest']"><a>New</a></li>
-    <li [routerLink]="['/about']"><a>About</a></li>
+    <li [routerLink]="['/news']" [ngClass]="{'active': url=='/news'}"><a>Top</a></li>
+    <li [routerLink]="['/newest']" [ngClass]="{'active': url=='/newest'}"><a>New</a></li>
+    <li [routerLink]="['/about']" [ngClass]="{'active': url=='/about'}"><a>About</a></li>
 </ul>

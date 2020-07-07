@@ -10,6 +10,7 @@ ul {
         color: $color-gray;
         padding: 0 1em;
         border-left: 3px solid $color-gray;
+        outline: none!important;
         &:first-of-type {
             padding-left: 0;
             border: none;
@@ -22,5 +23,11 @@ ul {
                 color: $color-orange;
             }
         }
+    }
+}
+
+.active {
+    a {
+        color: $color-orange;
     }
 }
