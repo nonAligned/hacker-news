@@ -1,8 +1,16 @@
+import { NewStoriesComponent } from './news/new-stories/new-stories.component';
+import { AboutComponent } from './core/about/about.component';
+import { TopStoriesComponent } from './news/top-stories/top-stories.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:"news", component: TopStoriesComponent},
+  {path:"newest", component: NewStoriesComponent},
+  {path:"about", component: AboutComponent},
+  {path:"", redirectTo: "/news", pathMatch: "full"}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
