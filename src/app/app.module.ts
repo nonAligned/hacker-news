@@ -9,6 +9,7 @@ import { AboutComponent } from './core/about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TopStoriesComponent } from './news/top-stories/top-stories.component';
 import { NewStoriesComponent } from './news/new-stories/new-stories.component';
+import { CommentsComponent } from './news/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NewStoriesComponent } from './news/new-stories/new-stories.component';
     AboutComponent,
     NotFoundComponent,
     TopStoriesComponent,
-    NewStoriesComponent
+    NewStoriesComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
