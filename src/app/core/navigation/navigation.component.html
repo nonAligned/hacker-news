@@ -1,1 +1,5 @@
-<p>navigation works!</p>
+<ul>
+    <li [routerLink]="['/news']" [ngClass]="{'active': url=='/news'}"><a>Top</a></li>
+    <li [routerLink]="['/newest']" [ngClass]="{'active': url=='/newest'}"><a>New</a></li>
+    <li [routerLink]="['/about']" [ngClass]="{'active': url=='/about'}"><a>About</a></li>
+</ul>

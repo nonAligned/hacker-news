@@ -1,0 +1,33 @@
+@import '../../../assets/vars';
+
+ul {
+    list-style: none;
+    padding-top: 4em;
+    li {
+        display: inline-block;
+        font-size: 1.5em;
+        font-weight: 900;
+        color: $color-gray;
+        padding: 0 1em;
+        border-left: 3px solid $color-gray;
+        outline: none!important;
+        &:first-of-type {
+            padding-left: 0;
+            border: none;
+        }
+        &:last-of-type {
+            padding-right: 0;
+        }
+        a {
+            &:hover {
+                color: $color-orange;
+            }
+        }
+    }
+}
+
+.active {
+    a {
+        color: $color-orange;
+    }
+}
