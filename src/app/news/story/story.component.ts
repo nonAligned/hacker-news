@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Item } from './../../model/item.model';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'hn-story',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./story.component.scss']
 })
 export class StoryComponent implements OnInit {
+  @Input() story: Item;
 
   constructor() { }
 
