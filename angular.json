@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "hack-news-project"
+    }
+  },
+  "defaultProject": "hack-news-project",
+  "cli": {
+    "analytics": false
+  }
 }
