@@ -17,5 +17,10 @@ ul {
         &:last-of-type {
             padding-right: 0;
         }
+        a {
+            &:hover {
+                color: $color-orange;
+            }
+        }
     }
 }
