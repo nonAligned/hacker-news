@@ -1,0 +1,17 @@
+@import '../../../assets/vars';
+@import '../../../assets/mixins';
+
+div {
+    @include clearfix;
+    position: relative;
+    border-bottom: solid 3px $color-orange;
+    padding-bottom: 1.5em;
+    img {
+        float: left;
+        width: 6em;
+    }
+}
+
+hn-navigation {
+    float: right;
+}
