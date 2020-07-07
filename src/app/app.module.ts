@@ -8,6 +8,7 @@ import { NavigationComponent } from './core/navigation/navigation.component';
 import { AboutComponent } from './core/about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TopStoriesComponent } from './news/top-stories/top-stories.component';
+import { NewStoriesComponent } from './news/new-stories/new-stories.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TopStoriesComponent } from './news/top-stories/top-stories.component';
     NavigationComponent,
     AboutComponent,
     NotFoundComponent,
-    TopStoriesComponent
+    TopStoriesComponent,
+    NewStoriesComponent
   ],
   imports: [
     BrowserModule,
