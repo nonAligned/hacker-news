@@ -12,6 +12,7 @@ import { TopStoriesComponent } from './news/top-stories/top-stories.component';
 import { NewStoriesComponent } from './news/new-stories/new-stories.component';
 import { CommentsComponent } from './news/comments/comments.component';
 import { StoryComponent } from './news/story/story.component';
+import { CommentComponent } from './news/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { StoryComponent } from './news/story/story.component';
     TopStoriesComponent,
     NewStoriesComponent,
     CommentsComponent,
-    StoryComponent
+    StoryComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
