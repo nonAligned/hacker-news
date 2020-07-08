@@ -1,1 +1,21 @@
-<p>comments works!</p>
+<div class="container">
+    <header>
+        <div id="title">
+            <h1><a href="{{story?.url}}" target="_blank">{{story?.title}}</a></h1>
+        </div>
+        <div id="footer">
+            <div id="b1">
+                <a>{{story?.by}}</a>
+            </div>
+            <div id="b2">
+                <p>{{story?.time*1000 | date:'short'}}</p>
+            </div>
+            <div id="b3">
+                <p>{{story?.score}}</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <hn-comment *ngFor="let comment of comments"></hn-comment>
+    </main>
+</div>
