@@ -5,12 +5,25 @@
     padding: 1em 0;
     header {
         padding-bottom: 1em;
+        button {
+            border: none;
+            background-color: $color-orange;
+            border-radius: $border-radius-small;
+            padding: 0.5em;
+            color: white;
+            margin-right: 1em;
+        }
         a {
             font-weight: 900;
+        }
+        p {
+            display: inline-block;
+            margin-left: 1em;
         }
     }
     main {
         border-bottom: 1px solid $color-orange;
+        padding-bottom: 0.5em;
     }
     footer {
         padding-left: 2em;

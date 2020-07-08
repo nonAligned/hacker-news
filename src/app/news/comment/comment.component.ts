@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./comment.component.scss']
 })
 export class CommentComponent implements OnInit {
+  hidden: boolean = false;
   @Input() comment: Item;
   childComments: Item[];
 
@@ -24,6 +25,10 @@ export class CommentComponent implements OnInit {
         this.childComments.push(comment);
       });
     }
+  }
+
+  toggleVisible() {
+    this.hidden = !this.hidden
   }
 
 }
