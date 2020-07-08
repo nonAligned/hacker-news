@@ -11,6 +11,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { TopStoriesComponent } from './news/top-stories/top-stories.component';
 import { NewStoriesComponent } from './news/new-stories/new-stories.component';
 import { CommentsComponent } from './news/comments/comments.component';
+import { StoryComponent } from './news/story/story.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CommentsComponent } from './news/comments/comments.component';
     NotFoundComponent,
     TopStoriesComponent,
     NewStoriesComponent,
-    CommentsComponent
+    CommentsComponent,
+    StoryComponent
   ],
   imports: [
     BrowserModule,

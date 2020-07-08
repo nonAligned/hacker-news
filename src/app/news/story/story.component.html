@@ -1,0 +1,17 @@
+<div class="story">
+    <header>
+        <p>
+            +{{story?.score}}
+        </p>
+    </header>
+    <main>
+        <h1>
+            <a href="{{story?.url}}" target="_blank">{{story?.title}}</a>
+        </h1>
+    </main>
+    <footer>
+        <div id="b1"><a>{{story?.by}}</a></div>
+        <div id="b2"><p>{{story?.time*1000 | date:'medium'}}</p></div>
+        <div id="b3"><a>comments</a></div>
+    </footer>
+</div>
