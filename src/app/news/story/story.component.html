@@ -1,15 +1,17 @@
 <div class="story">
-    <aside>
+    <header>
         <p>
-            {{story?.score}}
+            +{{story?.score}}
         </p>
-    </aside>
+    </header>
     <main>
-        <h1>{{story?.title}}</h1>
-        <p>
-            <a class="left">{{story?.by}}</a>
-            <span>{{story?.time}}</span>
-            <a class="right">comments</a>
-        </p>
+        <h1>
+            <a href="{{story?.url}}" target="_blank">{{story?.title}}</a>
+        </h1>
     </main>
+    <footer>
+        <div id="b1"><a>{{story?.by}}</a></div>
+        <div id="b2"><p>{{story?.time*1000 | date:'medium'}}</p></div>
+        <div id="b3"><a>comments</a></div>
+    </footer>
 </div>
