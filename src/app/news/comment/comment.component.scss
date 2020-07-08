@@ -1,0 +1,18 @@
+@import '../../../assets/vars';
+
+.comment {
+    text-align: left;
+    padding: 1em 0;
+    header {
+        padding-bottom: 1em;
+        a {
+            font-weight: 900;
+        }
+    }
+    main {
+        border-bottom: 1px solid $color-orange;
+    }
+    footer {
+        padding-left: 2em;
+    }
+}
