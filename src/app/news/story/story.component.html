@@ -12,6 +12,6 @@
     <footer>
         <div id="b1"><a>{{story?.by}}</a></div>
         <div id="b2"><p>{{story?.time*1000 | date:'medium'}}</p></div>
-        <div id="b3"><a>comments</a></div>
+        <div id="b3"><a>comments<span *ngIf="story?.descendants">({{story?.descendants}})</span></a></div>
     </footer>
 </div>
