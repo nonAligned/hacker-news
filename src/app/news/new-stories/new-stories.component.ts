@@ -23,7 +23,9 @@ export class NewStoriesComponent implements OnInit {
       this.newStoriesIds = data;
       for (let id in this.newStoriesIds) {
         this.service.getItemById(this.newStoriesIds[id]).subscribe(data => {
-          this.newStories.push(data);
+          if (data.type == 'story') {
+            this.newStories.push(data);
+          }
         });
       }
     });
