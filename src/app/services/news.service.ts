@@ -21,6 +21,14 @@ export class NewsService {
     }));
   }
 
+  getNewStoriesIds(): Observable<Array<number>> {
+    return this.http.get<Array<number>>(URL + "newstories.json").pipe(map(data => {
+      let idList: Array<number> = [];
+      data.forEach(elem => idList.push(elem));
+      return idList;
+    }));
+  }
+
   getItemById(id): Observable<Item> {
     return this.http.get(URL + "item/" + id + ".json").pipe(map(data => {
       return new Item(data);
