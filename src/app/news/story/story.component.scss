@@ -11,7 +11,6 @@
     header {
         background-color: $color-gray-light;
         padding: 1.5em 0;
-        border-top: 3px solid $color-gray;
         p {
             font-size: 2em;
             font-weight: 900;
@@ -27,7 +26,7 @@
         display: flex;
         div {
             padding: 1em 1em;
-            background-color: $color-gray;
+            background-color: $color-gray-light;
             a, p {
                 display: inline-block;
             }
@@ -35,7 +34,7 @@
         #b1 {
             flex-grow: 1;
             &:hover {
-                background-color: $color-gray-light;
+                background-color: $color-orange-light;
             }
         }
         #b2 {
@@ -44,14 +43,13 @@
         #b3 {
             flex-grow: 1;
             &:hover {
-                background-color: $color-gray-light;
+                background-color: $color-orange-light;
             }
         }
     }
     &:hover {
         header {
-            background-color: $color-orange-light;
-            border-top: 3px solid $color-orange;
+            background-color: $color-orange;
             p {
                 color: white;
             }
