@@ -11,11 +11,11 @@
                 <p>{{story?.time*1000 | date:'short'}}</p>
             </div>
             <div id="b3">
-                <p>{{story?.score}}</p>
+                <p>+{{story?.score}}</p>
             </div>
         </div>
     </header>
     <main>
-        <hn-comment *ngFor="let comment of comments"></hn-comment>
+        <hn-comment *ngFor="let comment of comments" [comment]="comment"></hn-comment>
     </main>
 </div>
