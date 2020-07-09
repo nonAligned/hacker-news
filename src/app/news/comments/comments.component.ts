@@ -38,8 +38,8 @@ export class CommentsComponent implements OnInit {
   getComments() {
     for(let i in this.story.kids) {
       this.service.getItemById(this.story.kids[i]).subscribe(comment => {
+        comment.time *= 1000;
         this.comments.push(comment);
-        this.comments[i].time *= 1000;
       });
     }
   }

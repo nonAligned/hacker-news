@@ -10,6 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class NewStoriesComponent implements OnInit {
   newStoriesIds: number[];
   newStories: Item[];
+  options = {
+    itemsPerPage: 25,
+    currentPage: 1
+  }
 
   constructor(private service: NewsService) { }
 
@@ -24,8 +28,8 @@ export class NewStoriesComponent implements OnInit {
       for (let id in this.newStoriesIds) {
         this.service.getItemById(this.newStoriesIds[id]).subscribe(story => {
           if (story.type == 'story') {
+            story.time *= 1000;
             this.newStories.push(story);
-            this.newStories[id].time *= 1000;
           }
         });
       }
