@@ -1,7 +1,9 @@
 <div class="comment">
     <header>
         <button (click)="toggleVisible()"><span *ngIf="!hidden">[-]</span><span *ngIf="hidden">[+]</span></button>
-        <a>{{comment?.by}}</a>
+        <a [routerLink]="['/user/', comment?.by]">
+            {{comment?.by}}
+        </a>
         <p>{{comment?.time | date:'short'}}</p>
     </header>
     <main *ngIf="!hidden">

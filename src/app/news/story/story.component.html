@@ -10,7 +10,11 @@
         </h1>
     </main>
     <footer>
-        <div id="b1"><a>{{story?.by}}</a></div>
+        <div id="b1">
+            <a [routerLink]="['/user/', story?.by]">
+                {{story?.by}}
+            </a>
+        </div>
         <div id="b2"><p>{{story?.time | date:'medium'}}</p></div>
         <div id="b3">
             <a [routerLink]="['/story/', story?.id]">

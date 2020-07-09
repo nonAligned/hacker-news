@@ -1,3 +1,4 @@
+import { UserComponent } from './news/user/user.component';
 import { CommentsComponent } from './news/comments/comments.component';
 import { NewStoriesComponent } from './news/new-stories/new-stories.component';
 import { AboutComponent } from './core/about/about.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path:"newest", component: NewStoriesComponent},
   {path:"about", component: AboutComponent},
   {path:"story/:id", component: CommentsComponent},
+  {path:"user/:id", component: UserComponent},
   {path:"", redirectTo: "/news", pathMatch: "full"}
 ];
 
