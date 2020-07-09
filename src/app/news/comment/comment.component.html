@@ -1,6 +1,6 @@
 <div class="comment">
     <header>
-        <button (click)="toggleVisible()"><span *ngIf="!hidden">Hide</span><span *ngIf="hidden">Show</span></button>
+        <button (click)="toggleVisible()"><span *ngIf="!hidden">[-]</span><span *ngIf="hidden">[+]</span></button>
         <a>{{comment?.by}}</a>
         <p>{{comment?.time | date:'short'}}</p>
     </header>

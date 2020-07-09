@@ -7,14 +7,14 @@
         padding-bottom: 1em;
         button {
             border: none;
-            background-color: $color-orange;
-            border-radius: $border-radius-small;
+            background: none;
+            color: $color-gray;
+            font-weight: 900;
             padding: 0.5em;
-            color: white;
             margin-right: 1em;
             outline: none!important;
             &:hover {
-                background-color: $color-orange-light;
+                color: $color-orange;
             }
         }
         a {
