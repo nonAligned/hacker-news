@@ -1,3 +1,6 @@
+import { User } from './../../model/user.model';
+import { NewsService } from './../../services/news.service';
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +9,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
+  user: User;
 
-  constructor() { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private service: NewsService
+    ) { }
 
   ngOnInit(): void {
+    this.activatedRoute.paramMap.subscribe(params => {
+      if (params.get("id")) {
+        let userId = params.get("id");
+        this.service.getUser(userId).subscribe(user => {
+          user.created *= 1000;
+          this.user = user;
+        });
+      }
+    });
   }
 
 }
