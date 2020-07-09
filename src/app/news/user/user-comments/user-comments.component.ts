@@ -1,3 +1,6 @@
+import { NewsService } from './../../../services/news.service';
+import { ActivatedRoute } from '@angular/router';
+import { Item } from './../../../model/item.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +9,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-comments.component.scss']
 })
 export class UserCommentsComponent implements OnInit {
+  userItemsIds: number[];
+  userComments: Item[];
+  options = {
+    itemsPerPage: 10,
+    currentPage: 1
+  }
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute, private service: NewsService) { }
 
   ngOnInit(): void {
+    this.userComments = [];
+    this.activatedRoute.parent.paramMap.subscribe(params => {
+      let userId = params.get("id");
+      this.service.getUser(userId).subscribe(user => {
+        this.userItemsIds = user.submitted;
+        for (let i=0 ; i<50 ; i++) {
+          if(i <= this.userItemsIds.length - 1) {
+            this.service.getItemById(this.userItemsIds[i]).subscribe(item => {
+              if (item.type == "comment" && item.deleted == null) {
+                item.time *= 1000;
+                this.userComments.push(item);
+              }
+            })
+          }
+        }
+      });
+    });
   }
 
 }

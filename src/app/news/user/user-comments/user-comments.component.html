@@ -1,1 +1,2 @@
-<p>user-comments works!</p>
+<hn-comment *ngFor="let comment of userComments | paginate: options" [comment]="comment"></hn-comment>
+<pagination-controls (pageChange)="options.currentPage = $event"></pagination-controls>
