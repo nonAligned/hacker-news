@@ -16,6 +16,7 @@ import { StoryComponent } from './news/story/story.component';
 import { CommentComponent } from './news/comment/comment.component';
 import { UserComponent } from './news/user/user.component';
 import { UserStoriesComponent } from './news/user/user-stories/user-stories.component';
+import { UserCommentsComponent } from './news/user/user-comments/user-comments.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UserStoriesComponent } from './news/user/user-stories/user-stories.comp
     StoryComponent,
     CommentComponent,
     UserComponent,
-    UserStoriesComponent
+    UserStoriesComponent,
+    UserCommentsComponent
   ],
   imports: [
     BrowserModule,
