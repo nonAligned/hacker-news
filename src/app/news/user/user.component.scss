@@ -34,3 +34,13 @@
         }
     }
 }
+
+a {
+    text-decoration: none;
+    &:link {
+        color: initial;
+    }
+    &:visited {
+        color: initial;
+    }
+}
