@@ -22,9 +22,9 @@ export class NewStoriesComponent implements OnInit {
     this.service.getNewStoriesIds().subscribe(data => {
       this.newStoriesIds = data;
       for (let id in this.newStoriesIds) {
-        this.service.getItemById(this.newStoriesIds[id]).subscribe(data => {
-          if (data.type == 'story') {
-            this.newStories.push(data);
+        this.service.getItemById(this.newStoriesIds[id]).subscribe(story => {
+          if (story.type == 'story') {
+            this.newStories.push(story);
           }
         });
       }
