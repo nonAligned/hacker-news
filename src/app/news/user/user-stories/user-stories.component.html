@@ -1,1 +1,2 @@
-<p>user-stories works!</p>
+<hn-story *ngFor="let story of userStories | paginate: options" [story]="story"></hn-story>
+<pagination-controls (pageChange)="options.currentPage = $event"></pagination-controls>
