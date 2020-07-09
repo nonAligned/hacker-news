@@ -1,3 +1,5 @@
+import { UserCommentsComponent } from './news/user/user-comments/user-comments.component';
+import { UserStoriesComponent } from './news/user/user-stories/user-stories.component';
 import { UserComponent } from './news/user/user.component';
 import { CommentsComponent } from './news/comments/comments.component';
 import { NewStoriesComponent } from './news/new-stories/new-stories.component';
@@ -12,7 +14,10 @@ const routes: Routes = [
   {path:"newest", component: NewStoriesComponent},
   {path:"about", component: AboutComponent},
   {path:"story/:id", component: CommentsComponent},
-  {path:"user/:id", component: UserComponent},
+  {path:"user/:id", component: UserComponent, children: [
+    {path:"stories", component:UserStoriesComponent},
+    {path:"comments", component:UserCommentsComponent}
+  ]},
   {path:"", redirectTo: "/news", pathMatch: "full"}
 ];
 

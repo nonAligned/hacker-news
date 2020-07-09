@@ -9,8 +9,9 @@
             <p *ngIf="user?.about" [innerHTML]="user?.about"></p>
         </main>
         <footer>
-            <div id="b1"><a>Stories</a></div>
-            <div id="b2"><a>Comments</a></div>
+            <div id="b1"><a [routerLink]="['stories']">Stories</a></div>
+            <div id="b2"><a [routerLink]="['comments']">Comments</a></div>
         </footer>
     </div>
+    <router-outlet></router-outlet>
 </div>
