@@ -24,14 +24,16 @@ export class UserStoriesComponent implements OnInit {
       let userId = params.get("id");
       this.service.getUser(userId).subscribe(user => {
         this.userItemsIds = user.submitted;
-        for (let i=0 ; i<50 ; i++) {
-          if(i <= this.userItemsIds.length - 1) {
-            this.service.getItemById(this.userItemsIds[i]).subscribe(item => {
-              if (item.type == "story" && item.deleted == null) {
-                item.time *= 1000;
-                this.userStories.push(item);
-              }
-            })
+        if (this.userItemsIds.length > 0) {
+          for (let i=0 ; i<50 ; i++) {
+            if(i <= this.userItemsIds.length - 1) {
+              this.service.getItemById(this.userItemsIds[i]).subscribe(item => {
+                if (item.type == "story" && item.deleted == null) {
+                  item.time *= 1000;
+                  this.userStories.push(item);
+                }
+              })
+            }
           }
         }
       });
