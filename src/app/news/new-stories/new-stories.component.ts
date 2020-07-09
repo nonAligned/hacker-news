@@ -10,6 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class NewStoriesComponent implements OnInit {
   newStoriesIds: number[];
   newStories: Item[];
+  options = {
+    itemsPerPage: 25,
+    currentPage: 1
+  }
 
   constructor(private service: NewsService) { }
 

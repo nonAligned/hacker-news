@@ -1,3 +1,4 @@
 <div class="container">
-    <hn-story *ngFor="let story of newStories" [story]="story"></hn-story>
+    <hn-story *ngFor="let story of newStories | paginate: options" [story]="story"></hn-story>
+    <pagination-controls (pageChange)="options.currentPage = $event"></pagination-controls>
 </div>
