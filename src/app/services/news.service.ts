@@ -1,3 +1,4 @@
+import { User } from './../model/user.model';
 import { Item } from './../model/item.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -32,6 +33,12 @@ export class NewsService {
   getItemById(id): Observable<Item> {
     return this.http.get(URL + "item/" + id + ".json").pipe(map(data => {
       return new Item(data);
+    }));
+  }
+
+  getUser(id): Observable<User> {
+    return this.http.get(URL + "user/" + id + ".json").pipe(map(user => {
+      return new User(user);
     }));
   }
 
