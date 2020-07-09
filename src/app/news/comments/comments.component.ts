@@ -27,6 +27,7 @@ export class CommentsComponent implements OnInit {
       id = params.get("id");
       this.service.getItemById(id).subscribe(story => {
         this.story = story;
+        this.story.time *= 1000;
         if (this.story.kids.length != 0) {
           this.getComments();
         }
@@ -38,6 +39,7 @@ export class CommentsComponent implements OnInit {
     for(let i in this.story.kids) {
       this.service.getItemById(this.story.kids[i]).subscribe(comment => {
         this.comments.push(comment);
+        this.comments[i].time *= 1000;
       });
     }
   }
