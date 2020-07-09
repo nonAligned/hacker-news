@@ -14,6 +14,7 @@ import { NewStoriesComponent } from './news/new-stories/new-stories.component';
 import { CommentsComponent } from './news/comments/comments.component';
 import { StoryComponent } from './news/story/story.component';
 import { CommentComponent } from './news/comment/comment.component';
+import { UserComponent } from './news/user/user.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CommentComponent } from './news/comment/comment.component';
     NewStoriesComponent,
     CommentsComponent,
     StoryComponent,
-    CommentComponent
+    CommentComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
