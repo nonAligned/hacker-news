@@ -23,6 +23,7 @@ export class CommentComponent implements OnInit {
     for (let i in this.comment.kids) {
       this.service.getItemById(this.comment.kids[i]).subscribe(comment => {
         this.childComments.push(comment);
+        this.childComments[i].time *= 1000;
       });
     }
   }

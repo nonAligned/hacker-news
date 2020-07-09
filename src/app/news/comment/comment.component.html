@@ -2,7 +2,7 @@
     <header>
         <button (click)="toggleVisible()"><span *ngIf="!hidden">Hide</span><span *ngIf="hidden">Show</span></button>
         <a>{{comment?.by}}</a>
-        <p>{{comment?.time*1000 | date:'short'}}</p>
+        <p>{{comment?.time | date:'short'}}</p>
     </header>
     <main *ngIf="!hidden">
         <p [innerHTML]="comment?.text"></p>
