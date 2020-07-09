@@ -28,8 +28,8 @@ export class NewStoriesComponent implements OnInit {
       for (let id in this.newStoriesIds) {
         this.service.getItemById(this.newStoriesIds[id]).subscribe(story => {
           if (story.type == 'story') {
+            story.time *= 1000;
             this.newStories.push(story);
-            this.newStories[id].time *= 1000;
           }
         });
       }
