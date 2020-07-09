@@ -25,6 +25,7 @@ export class NewStoriesComponent implements OnInit {
         this.service.getItemById(this.newStoriesIds[id]).subscribe(story => {
           if (story.type == 'story') {
             this.newStories.push(story);
+            this.newStories[id].time *= 1000;
           }
         });
       }
