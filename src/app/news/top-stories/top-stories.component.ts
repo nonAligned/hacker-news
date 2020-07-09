@@ -22,8 +22,8 @@ export class TopStoriesComponent implements OnInit {
     this.service.getTopStoriesIds().subscribe(data => {
       this.topStoriesIds = data;
       for (let id in this.topStoriesIds) {
-        this.service.getItemById(this.topStoriesIds[id]).subscribe(data => {
-          this.topStories.push(data);
+        this.service.getItemById(this.topStoriesIds[id]).subscribe(story => {
+          this.topStories.push(story);
         });
       }
     });
