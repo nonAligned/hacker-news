@@ -12,6 +12,10 @@
             padding: 0.5em;
             color: white;
             margin-right: 1em;
+            outline: none!important;
+            &:hover {
+                background-color: $color-orange-light;
+            }
         }
         a {
             font-weight: 900;
