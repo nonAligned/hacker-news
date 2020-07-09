@@ -25,12 +25,23 @@ export class TopStoriesComponent implements OnInit {
   getTopStories() {
     this.service.getTopStoriesIds().subscribe(data => {
       this.topStoriesIds = data;
-      for (let id in this.topStoriesIds) {
-        this.service.getItemById(this.topStoriesIds[id]).subscribe(story => {
+      this.service.getItemsByIdList(this.topStoriesIds).subscribe(story => {
+        if (story.type == "story") {
           story.time *= 1000;
           this.topStories.push(story);
-        });
-      }
+          this.topStories.sort((a: Item, b: Item) => {
+            const aIndex = this.topStoriesIds.findIndex(id => id === a.id)
+            const bIndex = this.topStoriesIds.findIndex(id => id === b.id)
+            return aIndex - bIndex;
+          });
+        }
+      });
+      // for (let id in this.topStoriesIds) {
+      //   this.service.getItemById(this.topStoriesIds[id]).subscribe(story => {
+      //     story.time *= 1000;
+      //     this.topStories.push(story);
+      //   });
+      // }
     });
   }
 

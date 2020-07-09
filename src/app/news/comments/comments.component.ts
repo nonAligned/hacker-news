@@ -36,12 +36,23 @@ export class CommentsComponent implements OnInit {
   }
 
   getComments() {
-    for(let i in this.story.kids) {
-      this.service.getItemById(this.story.kids[i]).subscribe(comment => {
+    this.service.getItemsByIdList(this.story.kids).subscribe(comment => {
+      if (comment.type == "comment") {
         comment.time *= 1000;
         this.comments.push(comment);
-      });
-    }
+        this.comments.sort((a: Item, b: Item) => {
+          const aIndex = this.story.kids.findIndex(id => id === a.id)
+          const bIndex = this.story.kids.findIndex(id => id === b.id)
+          return aIndex - bIndex;
+        });
+      }
+    });
+    // for(let i in this.story.kids) {
+    //   this.service.getItemById(this.story.kids[i]).subscribe(comment => {
+    //     comment.time *= 1000;
+    //     this.comments.push(comment);
+    //   });
+    // }
   }
 
 }
