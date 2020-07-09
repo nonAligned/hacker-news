@@ -1,0 +1,5 @@
+<div *ngIf="userComments?.length == 0">
+    <p>There are no recent comments submitted by this user</p>
+</div>
+<hn-comment *ngFor="let comment of userComments | paginate: options" [comment]="comment"></hn-comment>
+<pagination-controls (pageChange)="options.currentPage = $event"></pagination-controls>

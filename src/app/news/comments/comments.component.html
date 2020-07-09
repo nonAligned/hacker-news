@@ -5,7 +5,9 @@
         </div>
         <div id="footer">
             <div id="b1">
-                <a>{{story?.by}}</a>
+                <a [routerLink]="['/user/', story?.by]">
+                    {{story?.by}}
+                </a>
             </div>
             <div id="b2">
                 <p>{{story?.time | date:'short'}}</p>

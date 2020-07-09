@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="user">
+        <header>
+            <h1>{{user?.id}}</h1>
+        </header>
+        <main>
+            <p>User since: {{user?.created | date: 'dd.MM.yyyy.'}}</p>
+            <p>Karma: {{user?.karma}}</p>
+            <p *ngIf="user?.about" [innerHTML]="user?.about"></p>
+        </main>
+        <footer>
+            <div id="b1"><a [routerLink]="['stories']">Recent Stories</a></div>
+            <div id="b2"><a [routerLink]="['comments']">Recent Comments</a></div>
+        </footer>
+    </div>
+    <div class="items">
+        <router-outlet></router-outlet>
+    </div>
+</div>

@@ -19,6 +19,9 @@
         }
         a {
             font-weight: 900;
+            &:hover {
+                color: $color-orange;
+            }
         }
         p {
             display: inline-block;
@@ -31,5 +34,15 @@
     }
     footer {
         padding-left: 2em;
+    }
+}
+
+a {
+    text-decoration: none;
+    &:link {
+        color: initial;
+    }
+    &:visited {
+        color: initial;
     }
 }
