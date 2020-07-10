@@ -45,7 +45,7 @@ export class CommentsComponent implements OnInit {
 
   getComments() {
     this.service.getItemsByIdList(this.story.kids).subscribe(comment => {
-      if (comment.type == "comment") {
+      if (comment && comment.type == "comment" && comment.deleted == null) {
         comment.time *= 1000;
         this.comments.push(comment);
         this.comments.sort((a: Item, b: Item) => {

@@ -26,7 +26,7 @@ export class CommentComponent implements OnInit {
   getChildComments() {
     if (this.comment.kids) {
       this.service.getItemsByIdList(this.comment.kids).subscribe(comment => {
-        if (comment.type == "comment") {
+        if (comment && comment.type == "comment" && comment.deleted == null) {
           comment.time *= 1000;
           this.childComments.push(comment);
           this.childComments.sort((a: Item, b: Item) => {
