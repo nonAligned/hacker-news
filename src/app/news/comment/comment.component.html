@@ -4,7 +4,7 @@
         <a [routerLink]="['/user/', comment?.by]">
             {{comment?.by}}
         </a>
-        <p>{{comment?.time | date:'short'}}</p>
+        <p>{{comment?.time | date:'d.M.yy, HH:mm:ss'}}</p>
     </header>
     <main *ngIf="!hidden">
         <p [innerHTML]="comment?.text"></p>
