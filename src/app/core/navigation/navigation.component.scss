@@ -7,7 +7,6 @@ ul {
         display: inline-block;
         font-size: 1.5em;
         font-weight: 900;
-        color: $color-gray;
         padding: 0 1em;
         border-left: 3px solid $color-gray;
         outline: none!important;
@@ -19,15 +18,13 @@ ul {
             padding-right: 0;
         }
         a {
-            &:hover {
-                color: $color-orange;
-            }
+            display: inline-block;
         }
     }
 }
 
 .active {
     a {
-        color: $color-orange;
+        color: $color-orange!important;
     }
 }
