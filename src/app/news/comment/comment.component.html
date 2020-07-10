@@ -1,4 +1,4 @@
-<div class="comment" [@enterLeave]>
+<div class="comment">
     <header>
         <button (click)="toggleVisible()"><span *ngIf="!hidden">[-]</span><span *ngIf="hidden">[+]</span></button>
         <a [routerLink]="['/user/', comment?.by]">
@@ -9,9 +9,7 @@
     <main *ngIf="!hidden">
         <p [innerHTML]="comment?.text"></p>
     </main>
-    <footer *ngIf="!hidden">
-        <hn-comment *ngFor="let comment of childComments" [comment]="comment"
-        [@enterLeave]>
-        </hn-comment>
+    <footer *ngIf="!hidden" [@enterLeave]>
+        <hn-comment *ngFor="let comment of childComments" [comment]="comment"></hn-comment>
     </footer>
 </div>
