@@ -24,10 +24,11 @@ export class UserStoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.userStories = [];
+    this.userItemsIds = [];
     this.activatedRoute.parent.paramMap.subscribe(params => {
       let userId = params.get("id");
       this.service.getUser(userId).subscribe(user => {
-        if (user.submitted.length > 0) {
+        if (user && user.submitted.length > 0) {
           for (let i = 0; i < 50; i++) {
             this.userItemsIds.push(user.submitted[i]);
           }
