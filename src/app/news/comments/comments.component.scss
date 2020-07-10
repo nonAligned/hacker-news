@@ -23,6 +23,11 @@
                 flex-grow: 1;
                 font-weight: 900;
             }
+            #b1 {
+                a:hover {
+                    color: $color-orange;
+                }
+            }
         }
     }
     main {
