@@ -24,17 +24,20 @@ export class CommentComponent implements OnInit {
   }
 
   getChildComments() {
-    this.service.getItemsByIdList(this.comment.kids).subscribe(comment => {
-      if (comment.type == "comment") {
-        comment.time *= 1000;
-        this.childComments.push(comment);
-        this.childComments.sort((a: Item, b: Item) => {
-          const aIndex = this.comment.kids.findIndex(id => id === a.id)
-          const bIndex = this.comment.kids.findIndex(id => id === b.id)
-          return aIndex - bIndex;
-        });
-      }
-    });
+    if (this.comment.kids) {
+      this.service.getItemsByIdList(this.comment.kids).subscribe(comment => {
+        if (comment.type == "comment") {
+          comment.time *= 1000;
+          this.childComments.push(comment);
+          this.childComments.sort((a: Item, b: Item) => {
+            const aIndex = this.comment.kids.findIndex(id => id === a.id)
+            const bIndex = this.comment.kids.findIndex(id => id === b.id)
+            return aIndex - bIndex;
+          });
+        }
+      });
+    }
+    
   }
 
   toggleVisible() {
