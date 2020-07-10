@@ -9,7 +9,7 @@
     <main *ngIf="!hidden">
         <p [innerHTML]="comment?.text"></p>
     </main>
-    <footer *ngIf="!hidden && childComments?.length > 0" [@enterLeave]>
+    <footer *ngIf="!hidden && childComments?.length > 0" [@enter]>
         <hn-comment *ngFor="let comment of childComments" [comment]="comment"></hn-comment>
     </footer>
 </div>
