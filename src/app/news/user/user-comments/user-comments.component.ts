@@ -1,3 +1,4 @@
+import { displayAnimation } from './../../../animations/displayAnimation';
 import { NewsService } from './../../../services/news.service';
 import { ActivatedRoute } from '@angular/router';
 import { Item } from './../../../model/item.model';
@@ -6,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-user-comments',
   templateUrl: './user-comments.component.html',
-  styleUrls: ['./user-comments.component.scss']
+  styleUrls: ['./user-comments.component.scss'],
+  animations: [
+    displayAnimation
+  ]
 })
 export class UserCommentsComponent implements OnInit {
   userItemsIds: number[];
