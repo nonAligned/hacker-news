@@ -1,5 +1,9 @@
-<div *ngIf="userStories?.length == 0">
-    <p>There are no recent stories submitted by this user</p>
+<div *ngIf="userStories">
+    <div *ngIf="userStories?.length == 0">
+        <p>There are no recent stories submitted by this user</p>
+    </div>
+    <div *ngIf="userStories.length > 0">
+        <hn-story [@enterLeave] *ngFor="let story of userStories | paginate: options" [story]="story"></hn-story>
+        <pagination-controls (pageChange)="options.currentPage = $event"></pagination-controls>
+    </div>
 </div>
-<hn-story [@enterLeave] *ngFor="let story of userStories | paginate: options" [story]="story"></hn-story>
-<pagination-controls (pageChange)="options.currentPage = $event"></pagination-controls>

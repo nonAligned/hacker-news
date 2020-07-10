@@ -27,20 +27,27 @@ export class UserStoriesComponent implements OnInit {
     this.activatedRoute.parent.paramMap.subscribe(params => {
       let userId = params.get("id");
       this.service.getUser(userId).subscribe(user => {
-        this.userItemsIds = user.submitted;
-        if (this.userItemsIds.length > 0) {
-          for (let i=0 ; i<50 ; i++) {
-            if(i <= this.userItemsIds.length - 1) {
-              this.service.getItemById(this.userItemsIds[i]).subscribe(item => {
-                if (item.type == "story" && item.deleted == null) {
-                  item.time *= 1000;
-                  this.userStories.push(item);
-                }
-              })
-            }
+        if (user.submitted.length > 0) {
+          for (let i = 0; i < 50; i++) {
+            this.userItemsIds.push(user.submitted[i]);
           }
+          this.getStories();
         }
       });
+    });
+  }
+
+  getStories() {
+    this.service.getItemsByIdList(this.userItemsIds).subscribe(item => {
+      if(item && item.type == "story" && item.deleted == null) {
+        item.time *= 1000;
+        this.userStories.push(item);
+        this.userStories.sort((a: Item, b: Item) => {
+          const aIndex = this.userItemsIds.findIndex(id => id === a.id)
+          const bIndex = this.userItemsIds.findIndex(id => id === b.id)
+          return aIndex - bIndex;
+        });
+      }
     });
   }
 
