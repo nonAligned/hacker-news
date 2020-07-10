@@ -1,3 +1,4 @@
+import { displayAnimation } from './../../animations/displayAnimation';
 import { Item } from './../../model/item.model';
 import { NewsService } from './../../services/news.service';
 import { Component, OnInit } from '@angular/core';
@@ -5,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'hn-top-stories',
   templateUrl: './top-stories.component.html',
-  styleUrls: ['./top-stories.component.scss']
+  styleUrls: ['./top-stories.component.scss'],
+  animations: [
+    displayAnimation
+  ]
 })
 export class TopStoriesComponent implements OnInit {
   topStoriesIds: number[];
