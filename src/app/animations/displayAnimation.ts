@@ -3,7 +3,7 @@ import {
     style
 } from '@angular/animations';
 
-export const displayAnimation = 
+export const displayAnimation = [
     trigger('enterLeave', [
         transition(':enter', [
             style({
@@ -18,4 +18,15 @@ export const displayAnimation =
                 opacity: 0,
             }))
         ])
-    ])
+    ]),
+    trigger('enter', [
+        transition(':enter', [
+            style({
+                opacity: 0
+            }),
+            animate('500ms 200ms ease-in-out', style({
+                opacity: 1
+            }))
+        ])
+    ]),
+];
