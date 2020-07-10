@@ -25,8 +25,12 @@ export class UserComponent implements OnInit {
       if (params.get("id")) {
         let userId = params.get("id");
         this.service.getUser(userId).subscribe(user => {
-          user.created *= 1000;
-          this.user = user;
+          if (user && user.id) {
+            user.created *= 1000;
+            this.user = user;
+          } else {
+            this.user = new User();
+          }
         });
       }
     });
