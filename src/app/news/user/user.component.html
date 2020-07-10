@@ -1,4 +1,4 @@
-<div class="container" [@enter] *ngIf="user">
+<div class="container" [@enter] *ngIf="user && user.id">
     <div class="user">
         <header>
             <h1>{{user?.id}}</h1>
@@ -15,5 +15,21 @@
     </div>
     <div class="items">
         <router-outlet></router-outlet>
+    </div>
+</div>
+<div class="container" [@enter] *ngIf="user && user.id == null">
+    <div class="user">
+        <header>
+            <h1>John Doe</h1>
+        </header>
+        <main>
+            <p>Member since: Never</p>
+            <p>Karma: -9999</p>
+            <p>I don't exist :(</p>
+        </main>
+        <footer>
+            <div id="b1"><a>No stories</a></div>
+            <div id="b2"><a>No Comments</a></div>
+        </footer>
     </div>
 </div>
