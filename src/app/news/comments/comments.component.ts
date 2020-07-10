@@ -30,10 +30,14 @@ export class CommentsComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(params => {
       id = params.get("id");
       this.service.getItemById(id).subscribe(story => {
-        this.story = story;
-        this.story.time *= 1000;
-        if (this.story.kids.length != 0) {
-          this.getComments();
+        if (story && story.type == 'story') {
+          this.story = story;
+          this.story.time *= 1000;
+          if (this.story.kids.length != 0) {
+            this.getComments();
+          }
+        } else {
+          this.story = new Item();
         }
       });
     });
