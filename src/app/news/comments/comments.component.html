@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [@enterLeave]>
     <header>
         <div id="title">
             <h1><a href="{{story?.url}}" target="_blank">{{story?.title}}</a></h1>
@@ -17,7 +17,7 @@
             </div>
         </div>
     </header>
-    <main>
+    <main [@enterLeave]>
         <hn-comment *ngFor="let comment of comments" [comment]="comment"></hn-comment>
         <p *ngIf="comments.length == 0">There are currently no comments for this story</p>
     </main>

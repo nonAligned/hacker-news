@@ -1,5 +1,26 @@
 <ul>
-    <li [routerLink]="['/news']" [ngClass]="{'active': url=='/news'}"><a>Top</a></li>
-    <li [routerLink]="['/newest']" [ngClass]="{'active': url=='/newest'}"><a>New</a></li>
-    <li [routerLink]="['/about']" [ngClass]="{'active': url=='/about'}"><a>About</a></li>
+    <li [routerLink]="['/news']" 
+    [ngClass]="{'active': url=='/news'}"
+    (mouseenter)="focusLink('news')"
+    (mouseleave)="focusLink('')">
+        <a [@focus]="focused=='news' ? 'focusedLink' : 'unfocusedLink'">
+            Top
+        </a>
+    </li>
+    <li [routerLink]="['/newest']"
+    [ngClass]="{'active': url=='/newest'}"
+    (mouseenter)="focusLink('newest')"
+    (mouseleave)="focusLink('')">
+        <a [@focus]="focused=='newest' ? 'focusedLink' : 'unfocusedLink'">
+            New
+        </a>
+    </li>
+    <li [routerLink]="['/about']"
+    [ngClass]="{'active': url=='/about'}"
+    (mouseenter)="focusLink('about')"
+    (mouseleave)="focusLink('')">
+        <a [@focus]="focused=='about' ? 'focusedLink' : 'unfocusedLink'">
+            About
+        </a>
+    </li>
 </ul>

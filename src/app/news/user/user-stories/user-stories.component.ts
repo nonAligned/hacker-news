@@ -1,3 +1,4 @@
+import { displayAnimation } from './../../../animations/displayAnimation';
 import { NewsService } from './../../../services/news.service';
 import { ActivatedRoute } from '@angular/router';
 import { Item } from './../../../model/item.model';
@@ -6,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-user-stories',
   templateUrl: './user-stories.component.html',
-  styleUrls: ['./user-stories.component.scss']
+  styleUrls: ['./user-stories.component.scss'],
+  animations: [
+    displayAnimation
+  ]
 })
 export class UserStoriesComponent implements OnInit {
   userItemsIds: number[];

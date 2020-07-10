@@ -1,5 +1,8 @@
-<div class="story">
-    <header>
+<div class="story"
+(mouseenter)="focusElement(true)"
+(mouseleave)="focusElement(false)"
+[@focus]="focused ? 'focusedItem' : 'unfocusedItem'">
+    <header [@focus]="focused ? 'focusedHeader' : 'unfocusedHeader'">
         <p>
             +{{story?.score}}
         </p>

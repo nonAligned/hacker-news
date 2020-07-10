@@ -5,7 +5,6 @@
     display: inline-block;
     width: 100%;
     border-radius: $border-radius-small;
-    box-shadow: $box-shadow;
     margin: 1em 0;
     overflow: hidden;
     header {
@@ -50,11 +49,8 @@
     &:hover {
         header {
             background-color: $color-orange;
-            p {
-                color: white;
-            }
+            color: #FFF;
         }
-        transform: scale(1.1);
     }
 }
 
