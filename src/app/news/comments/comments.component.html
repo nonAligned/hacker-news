@@ -17,8 +17,10 @@
             </div>
         </div>
     </header>
-    <main>
-        <hn-comment *ngFor="let comment of comments" [comment]="comment"></hn-comment>
+    <main [enterLeave]>
+        <hn-comment 
+        *ngFor="let comment of comments" [comment]="comment">
+        </hn-comment>
         <p *ngIf="comments.length == 0">There are currently no comments for this story</p>
     </main>
 </div>

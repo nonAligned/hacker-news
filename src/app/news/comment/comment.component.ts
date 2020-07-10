@@ -1,3 +1,4 @@
+import { displayAnimation } from './../../animations/displayAnimation';
 import { NewsService } from './../../services/news.service';
 import { Item } from './../../model/item.model';
 import { Component, OnInit, Input } from '@angular/core';
@@ -5,7 +6,10 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'hn-comment',
   templateUrl: './comment.component.html',
-  styleUrls: ['./comment.component.scss']
+  styleUrls: ['./comment.component.scss'],
+  animations: [
+    displayAnimation
+  ]
 })
 export class CommentComponent implements OnInit {
   hidden: boolean = false;
