@@ -18,7 +18,7 @@
         <div id="b2"><p>{{story?.time | date:'medium'}}</p></div>
         <div id="b3">
             <a [routerLink]="['/story/', story?.id]">
-            comments<span *ngIf="story?.descendants">({{story?.descendants}})</span>
+            Comments<span *ngIf="story?.descendants">({{story?.descendants}})</span>
             </a>
         </div>
     </footer>
