@@ -15,17 +15,21 @@ export class NewsService {
   constructor(private http: HttpClient) { }
 
   getTopStoriesIds(): Observable<Array<number>> {
-    return this.http.get<Array<number>>(URL + "topstories.json").pipe(map(data => {
+    return this.http.get<Array<number>>(URL + "topstories.json").pipe(map(ids => {
       let idList: Array<number> = [];
-      data.forEach(elem => idList.push(elem));
+      if (ids.length > 0) {
+        ids.forEach(elem => idList.push(elem));
+      }
       return idList;
     }));
   }
 
   getNewStoriesIds(): Observable<Array<number>> {
-    return this.http.get<Array<number>>(URL + "newstories.json").pipe(map(data => {
+    return this.http.get<Array<number>>(URL + "newstories.json").pipe(map(ids => {
       let idList: Array<number> = [];
-      data.forEach(elem => idList.push(elem));
+      if (ids.length > 0) {
+        ids.forEach(elem => idList.push(elem));
+      }
       return idList;
     }));
   }
@@ -34,9 +38,6 @@ export class NewsService {
     return from(ids).pipe(
       mergeMap(id => <Observable<Item>> this.http.get(URL+"item/"+id+".json"))
     );
-    // return this.http.get(URL + "item/" + id + ".json").pipe(map(data => {
-    //   return new Item(data);
-    // }));
   }
 
   getItemById(id): Observable<Item> {
