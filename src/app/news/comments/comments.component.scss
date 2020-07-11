@@ -45,3 +45,19 @@ a {
         color: initial;
     }
 }
+
+@media screen and (max-width: $screen-xs) {
+    .container {
+        header {
+            #title {
+                h1 {
+                    font-size: 1em;
+                }
+            }
+            #footer {
+                flex-direction: column;
+                font-size: 0.75em;
+            }
+        }
+    }
+}
