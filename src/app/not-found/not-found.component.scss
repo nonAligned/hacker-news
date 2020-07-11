@@ -1,0 +1,20 @@
+@import '../../assets/vars';
+
+.container {
+    text-align: center;
+    padding: 1.5em 1.5em;
+    p {
+        font-size: 4em;
+        color: $color-orange;
+    }
+    button {
+        margin: 2em;
+        padding: 1em;
+        font-size: 1.5em;
+        border: none;
+        background-color: $color-orange;
+        color: #FFF;
+        box-shadow: $box-shadow;
+        border-radius: $border-radius-small;
+    }
+}
