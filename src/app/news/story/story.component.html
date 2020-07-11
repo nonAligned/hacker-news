@@ -1,7 +1,7 @@
 <div class="story"
 (mouseenter)="focusElement(true)"
 (mouseleave)="focusElement(false)"
-[@focus]="focused ? 'focusedItem' : 'unfocusedItem'">
+[@focus]="focused && screenWidth > 800 ? 'focusedItem' : 'unfocusedItem'">
     <header [@focus]="focused ? 'focusedHeader' : 'unfocusedHeader'">
         <p>
             +{{story?.score}}
