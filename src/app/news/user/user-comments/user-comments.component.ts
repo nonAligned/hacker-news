@@ -52,4 +52,16 @@ export class UserCommentsComponent implements OnInit {
     });
   }
 
+  pageChanged(newPage) {
+    this.options.currentPage = newPage;
+    let scrollToTop = window.setInterval(() => {
+      let pos = window.pageYOffset;
+      if (pos > 0) {
+          window.scrollTo(0, pos - 100);
+      } else {
+          window.clearInterval(scrollToTop);
+      }
+    }, 16);
+  }
+
 }

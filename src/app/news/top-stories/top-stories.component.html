@@ -3,5 +3,5 @@
     *ngFor="let story of topStories | paginate: options" [story]="story"
     [@enterLeave]>
     </hn-story>
-    <pagination-controls (pageChange)="options.currentPage = $event"></pagination-controls>
+    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
 </div>
