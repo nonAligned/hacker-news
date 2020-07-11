@@ -28,3 +28,13 @@ ul {
         color: $color-orange!important;
     }
 }
+
+@media screen and (max-width: $screen-sm) {
+    ul {
+        li {
+            width: 100%;
+            padding: 1em 0;
+            border: none;
+        }
+    }
+}

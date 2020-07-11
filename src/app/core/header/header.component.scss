@@ -15,3 +15,17 @@ div {
 hn-navigation {
     float: right;
 }
+
+@media screen and (max-width: $screen-sm) {
+    div {
+        text-align: center;
+        img {
+            float: none;
+            width: 10em;
+        }
+
+    }
+    hn-navigation {
+        float: none;
+    }
+}
