@@ -29,25 +29,23 @@ export class NewStoriesComponent implements OnInit {
   getNewStories() {
     this.service.getNewStoriesIds().subscribe(data => {
       this.newStoriesIds = data;
-      this.service.getItemsByIdList(this.newStoriesIds).subscribe(story => {
-        if (story.type == "story") {
-          story.time *= 1000;
-          this.newStories.push(story);
-          this.newStories.sort((a: Item, b: Item) => {
-            const aIndex = this.newStoriesIds.findIndex(id => id === a.id)
-            const bIndex = this.newStoriesIds.findIndex(id => id === b.id)
-            return aIndex - bIndex;
-          });
-        }
-      });
-      // for (let id in this.newStoriesIds) {
-      //   this.service.getItemById(this.newStoriesIds[id]).subscribe(story => {
-      //     if (story.type == 'story') {
-      //       story.time *= 1000;
-      //       this.newStories.push(story);
-      //     }
-      //   });
-      // }
+      if (this.newStoriesIds.length > 0) {
+
+        this.service.getItemsByIdList(this.newStoriesIds).subscribe(story => {
+          if (story && story.type == "story" && story.deleted == null) {
+
+            story.time *= 1000;
+            this.newStories.push(story);
+            this.newStories.sort((a: Item, b: Item) => {
+              const aIndex = this.newStoriesIds.findIndex(id => id === a.id)
+              const bIndex = this.newStoriesIds.findIndex(id => id === b.id)
+              return aIndex - bIndex;
+            });
+
+          }
+        });
+
+      }
     });
   }
 

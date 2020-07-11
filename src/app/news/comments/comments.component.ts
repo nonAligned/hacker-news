@@ -30,7 +30,7 @@ export class CommentsComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(params => {
       id = params.get("id");
       this.service.getItemById(id).subscribe(story => {
-        if (story && story.type == 'story') {
+        if (story && story.type == 'story' && story.deleted == null) {
           this.story = story;
           this.story.time *= 1000;
           if (this.story.kids.length != 0) {
@@ -55,12 +55,6 @@ export class CommentsComponent implements OnInit {
         });
       }
     });
-    // for(let i in this.story.kids) {
-    //   this.service.getItemById(this.story.kids[i]).subscribe(comment => {
-    //     comment.time *= 1000;
-    //     this.comments.push(comment);
-    //   });
-    // }
   }
 
 }
