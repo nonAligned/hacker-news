@@ -1,3 +1,4 @@
+import { NotFoundComponent } from './not-found/not-found.component';
 import { UserCommentsComponent } from './news/user/user-comments/user-comments.component';
 import { UserStoriesComponent } from './news/user/user-stories/user-stories.component';
 import { UserComponent } from './news/user/user.component';
@@ -15,10 +16,11 @@ const routes: Routes = [
   {path:"about", component: AboutComponent},
   {path:"story/:id", component: CommentsComponent},
   {path:"user/:id", component: UserComponent, children: [
-    {path:"stories", component:UserStoriesComponent},
-    {path:"comments", component:UserCommentsComponent}
+    {path:"stories", component: UserStoriesComponent},
+    {path:"comments", component: UserCommentsComponent}
   ]},
-  {path:"", redirectTo: "/news", pathMatch: "full"}
+  {path:"", redirectTo: "/news", pathMatch: "full"},
+  {path:"**", component: NotFoundComponent}
 ];
 
 @NgModule({
