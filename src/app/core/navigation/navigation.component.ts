@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class NavigationComponent implements OnInit {
   url: string;
   focused: string;
+  screenWidth: number;
 
   constructor(private router: Router) { }
 
@@ -24,6 +25,7 @@ export class NavigationComponent implements OnInit {
 
   focusLink(link: string) {
     this.focused = link;
+    this.screenWidth = window.innerWidth;
   }
 
 }

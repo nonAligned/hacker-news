@@ -12,6 +12,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class StoryComponent implements OnInit {
   @Input() story: Item;
+  screenWidth: number
   focused: boolean = false;
 
   constructor() { }
@@ -21,6 +22,7 @@ export class StoryComponent implements OnInit {
 
   focusElement(value: boolean) {
     this.focused = value;
+    this.screenWidth = window.innerWidth;
   }
 
 }

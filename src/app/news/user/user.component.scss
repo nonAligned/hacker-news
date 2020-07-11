@@ -2,7 +2,6 @@
 
 .container {
     text-align: center;
-    padding: 1.5em 10em;
 }
 
 .user {
@@ -46,5 +45,24 @@ a {
     }
     &:visited {
         color: initial;
+    }
+}
+
+@media screen and (max-width: $screen-xs) {
+    .user {
+        header {
+            h1 {
+                font-size: 1em;
+            }
+        }
+        main {
+            padding: 1em;
+            p {
+                font-size: 0.75em;
+            }
+        }
+        footer {
+            flex-direction: column;
+        }
     }
 }

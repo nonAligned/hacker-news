@@ -6,4 +6,17 @@
 
 .container {
     position: relative;
+    padding: 1.5em 10em;
+}
+
+@media screen and (max-width: $screen-md) {
+    .container {
+        padding: 1.5em 5em;
+    }
+}
+
+@media screen and (max-width: $screen-sm) {
+    .container {
+        padding: 1.5em 0;
+    }
 }

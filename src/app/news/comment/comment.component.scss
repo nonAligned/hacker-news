@@ -10,7 +10,6 @@
             background: none;
             color: $color-gray;
             font-weight: 900;
-            padding: 0.5em;
             margin-right: 1em;
             outline: none!important;
             &:hover {
@@ -44,5 +43,31 @@ a {
     }
     &:visited {
         color: initial;
+    }
+}
+
+@media screen and (max-width: $screen-xs) {
+    .comment {
+        header {
+            font-size: 0.5em;
+            button {
+                margin-right: 0em;
+            }
+            a {
+                display: inline-block;
+                width: 100%;
+            }
+            p {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        main {
+            font-size: 0.5em;
+            padding-bottom: 1em;
+            p {
+                word-wrap: break-word;
+            }
+        }
     }
 }

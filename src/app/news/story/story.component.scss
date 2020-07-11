@@ -9,7 +9,7 @@
     overflow: hidden;
     header {
         background-color: $color-gray-light;
-        padding: 1.5em 0;
+        padding: 1.5em 1em;
         p {
             font-size: 2em;
             font-weight: 900;
@@ -61,5 +61,19 @@ a {
     }
     &:visited {
         color: black;
+    }
+}
+
+@media screen and (max-width: $screen-xs) {
+    .story {
+        main {
+            padding: 2em 1em;
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+        footer {
+            flex-direction: column;
+        }
     }
 }
