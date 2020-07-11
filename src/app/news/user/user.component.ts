@@ -24,14 +24,16 @@ export class UserComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(params => {
       if (params.get("id")) {
         let userId = params.get("id");
-        this.service.getUser(userId).subscribe(user => {
-          if (user && user.id) {
-            user.created *= 1000;
-            this.user = user;
-          } else {
-            this.user = new User();
-          }
-        });
+        if (userId != "") {
+          this.service.getUser(userId).subscribe(user => {
+            if (user && user.id) {
+              user.created *= 1000;
+              this.user = user;
+            } else {
+              this.user = new User();
+            }
+          });
+        }
       }
     });
   }
