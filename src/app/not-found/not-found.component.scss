@@ -18,3 +18,14 @@
         border-radius: $border-radius-small;
     }
 }
+
+@media screen and (max-width: $screen-sm) {
+    .container {
+        p {
+            font-size: 2em;
+        }
+        button {
+            font-size: 1em;
+        }
+    }
+}
