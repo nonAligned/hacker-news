@@ -15,6 +15,10 @@ import { ActivatedRoute } from '@angular/router';
 export class CommentsComponent implements OnInit {
   story: Item;
   comments: Item[];
+  options = {
+    itemsPerPage: 10,
+    currentPage: 1
+  }
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -55,6 +59,10 @@ export class CommentsComponent implements OnInit {
         });
       }
     });
+  }
+
+  pageChanged(newPage) {
+    this.options.currentPage = newPage;
   }
 
 }

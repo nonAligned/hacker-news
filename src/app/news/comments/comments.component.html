@@ -19,7 +19,13 @@
     </header>
     <main>
         <div *ngIf="comments?.length > 0" [@enter]>
-            <hn-comment *ngFor="let comment of comments" [comment]="comment"></hn-comment>
+            <hn-comment 
+            *ngFor="let comment of comments | paginate: options" 
+            [comment]="comment">
+            </hn-comment>
+            <pagination-controls
+            (pageChange)="pageChanged($event)">
+            </pagination-controls>
         </div>
         <p *ngIf="comments?.length == 0">There are currently no comments for this story</p>
     </main>
