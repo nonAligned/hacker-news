@@ -4,6 +4,13 @@
     padding: 3em;
 }
 
+ngx-spinner {
+    p {
+        text-align: center;
+        color: #FFF;
+    }
+}
+
 @media screen and (max-width: $screen-xs) {
     .container {
         padding: 1.5em;
