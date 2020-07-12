@@ -16,10 +16,9 @@ export class HnHttpInterceptor implements HttpInterceptor {
         this.spinner.show();
         this.count++;
 
-        return next.handle(req).pipe(tap(
-            event => console.log(event),
-            error => console.log(error)
-        ), finalize(() => {
+        return next.handle(req).pipe(tap(),
+        
+        finalize(() => {
             this.count--;
             if (this.count == 0) {
                 this.spinner.hide();
